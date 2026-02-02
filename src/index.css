@@ -1,0 +1,380 @@
+body {
+  margin: 0;
+  font-family: Inter, system-ui, sans-serif;
+  background: #f8fafc;
+}
+
+.app {
+  display: flex;
+  height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 240px;
+  background: #111827;
+  color: white;
+  padding: 20px;
+}
+
+.logo {
+  margin-bottom: 20px;
+}
+
+.sidebar input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  border: none;
+}
+
+.sidebar button {
+  width: 100%;
+}
+
+/* Content */
+.content {
+  flex: 1;
+  padding: 24px;
+  overflow-y: auto;
+}
+
+/* Sprint Card */
+.sprint-card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 24px;
+}
+
+.sprint-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+.sprint-header h1 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+}
+
+.complete-btn.subtle,
+.reopen-btn.subtle {
+  background: transparent;
+  border: 1px solid #d1d5db;
+  color: #374151;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.complete-btn.subtle:hover {
+  background: #40b61c;
+  border-color: #ffffff;
+  color: #ffffff;
+}
+
+.reopen-btn.subtle:hover {
+  background: #eff6ff;
+  border-color: #2563eb;
+  color: #2563eb;
+}
+
+.current-badge {
+  background: #2563eb;
+  color: white;
+  font-size: 11px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  margin-left: 8px;
+}
+
+/* Tables */
+.task-table,
+.inner-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.task-table th,
+.inner-table th {
+  text-align: left;
+  font-size: 13px;
+  color: #6b7280;
+  padding-bottom: 8px;
+}
+
+.task-table td,
+.inner-table td {
+  padding: 10px 0;
+  border-top: 1px solid #e5e7eb;
+}
+
+/* Expanded */
+.expanded-row {
+  background: #f9fafb;
+}
+
+.detail-section {
+  margin-top: 16px;
+}
+
+/* Status styles */
+.dev-status {
+  padding: 4px 8px;
+  border-radius: 8px;
+  font-size: 12px;
+}
+
+.dev-status.todo {
+  background: #e5e7eb;
+}
+
+.dev-status.in-dev {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.dev-status.code-review {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.dev-status.done {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.qa-status {
+  padding: 4px 8px;
+  border-radius: 8px;
+  font-size: 12px;
+}
+
+.qa-status.failed {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.qa-status.passed {
+  background: #dcfce7;
+  color: #166534;
+}
+
+/* Buttons */
+.link-btn {
+  background: none;
+  border: none;
+  color: #2563eb;
+  cursor: pointer;
+}
+
+.edit-btn {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* Empty */
+.empty {
+  padding: 16px;
+  text-align: center;
+  color: #6b7280;
+  background: #f9fafb;
+  border-radius: 8px;
+}
+
+.add-task {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr) auto;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.add-task input {
+  padding: 8px;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+}
+select {
+  padding: 6px;
+  border-radius: 6px;
+  border: 1px solid #e5e7eb;
+}
+
+.qa-add {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.qa-add input,
+.qa-add select {
+  padding: 6px;
+  border-radius: 6px;
+  border: 1px solid #e5e7eb;
+}
+/* Task index badge */
+.task-index {
+  display: inline-block;
+  min-width: 24px;
+  text-align: center;
+  padding: 4px 6px;
+  border-radius: 6px;
+  background: #e5e7eb;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* Highlight active task row */
+.active-task {
+  background: #f1f5f9;
+}
+
+/* Make expanded row visually connected */
+.expanded-row {
+  background: #f9fafb;
+  border-left: 4px solid #2563eb;
+}
+/* Expanded task container */
+.expanded-row td {
+  padding: 16px;
+}
+
+.detail-section {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 16px;
+  margin-bottom: 16px;
+  border: 1px solid #e5e7eb;
+}
+
+/* Strong separation between Dev & QA */
+.detail-section h4 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-size: 15px;
+}
+
+/* QA section emphasis */
+.detail-section.qa-section {
+  background: #f8fafc;
+  border-left: 4px solid #16a34a;
+}
+
+/* Platform badges */
+.platform-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 999px;
+  text-transform: uppercase;
+}
+
+.platform-badge.web {
+  background: #e0f2fe;
+  color: #0369a1;
+}
+
+.platform-badge.android {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.platform-badge.ios {
+  background: #f3e8ff;
+  color: #6b21a8;
+}
+
+.platform-badge.backend {
+  background: #fff7ed;
+  color: #9a3412;
+}
+
+.platform-badge.bll {
+  background: #fef2f2;
+  color: #991b1b;
+}
+
+/* Inner table spacing */
+.inner-table td {
+  padding: 12px 8px;
+}
+
+/* QA add row alignment */
+.qa-add {
+  background: #f1f5f9;
+  padding: 12px;
+  border-radius: 8px;
+}
+
+/* Active task row stronger anchor */
+.active-task {
+  background: #eef2ff;
+  border-left: 4px solid #2563eb;
+}
+
+.delete-btn {
+  background: none;
+  border: none;
+  color: #dc2626;
+  cursor: pointer;
+  margin-left: 8px;
+  font-size: 14px;
+}
+
+.delete-btn:hover {
+  color: #dc2626;
+}
+
+.badge {
+  font-size: 11px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  margin-left: 8px;
+}
+
+.badge.current {
+  background: #2563eb;
+  color: white;
+}
+
+.badge.past {
+  background: #e5e7eb;
+  color: #374151;
+}
+.menu-title {
+  margin-top: 24px;
+  font-size: 13px;
+  color: #6b7280;
+}
+
+.menu li {
+  cursor: pointer;
+  padding: 6px 8px;
+  border-radius: 6px;
+}
+
+.menu li.active {
+  background-color: rgba(60, 69, 88, 1);
+}
+
+.menu li:hover {
+  background: rgb(123, 125, 129);
+}
+
+.readonly-note {
+  margin-top: 12px;
+  font-size: 12px;
+  color: #6b7280;
+}
+
+
